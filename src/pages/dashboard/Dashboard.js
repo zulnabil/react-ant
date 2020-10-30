@@ -62,7 +62,7 @@ function Dashboard() {
                       rules={[
                         { required: true, message: "Country is required" },
                       ]}
-                      style={{ width: "70%" }}
+                      style={{ margin: 0, width: "70%" }}
                     >
                       <Select
                         showSearch
@@ -89,7 +89,7 @@ function Dashboard() {
                       rules={[
                         { required: true, message: "Postal code is required" },
                       ]}
-                      style={{ width: "30%" }}
+                      style={{ margin: 0, width: "30%" }}
                     >
                       <Input type="number" placeholder="Postal code" />
                     </Form.Item>
@@ -100,7 +100,7 @@ function Dashboard() {
                   label="To"
                   required
                   tooltip="Where will the package be sent"
-                  style={{ marginBottom: 18 }}
+                  style={{ marginBottom: 15 }}
                 >
                   <Input.Group compact>
                     <Form.Item
@@ -108,7 +108,7 @@ function Dashboard() {
                       rules={[
                         { required: true, message: "Country is required" },
                       ]}
-                      style={{ width: "70%" }}
+                      style={{ margin: 0, width: "70%" }}
                     >
                       <Select
                         showSearch
@@ -135,7 +135,7 @@ function Dashboard() {
                       rules={[
                         { required: true, message: "Postal code is required" },
                       ]}
-                      style={{ width: "30%" }}
+                      style={{ margin: 0, width: "30%" }}
                     >
                       <Input type="number" placeholder="Postal code" />
                     </Form.Item>
@@ -146,14 +146,14 @@ function Dashboard() {
                   label="Parcel details"
                   required
                   tooltip="What is the weight of the package in kilogram"
-                  style={{ marginBottom: 18 }}
+                  style={{ marginBottom: 30 }}
                 >
                   <Input type="number" placeholder="Weight (in kg)" />
                 </Form.Item>
 
-                <Row justify="center">
-                  <Form.Item>
-                    <Button type="primary">Submit</Button>
+                <Row justify="center" align="middle">
+                  <Form.Item style={{ marginBottom: 10 }}>
+                    <Button type="primary">Get quotes</Button>
                   </Form.Item>
                 </Row>
               </Form>
