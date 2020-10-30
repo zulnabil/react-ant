@@ -53,7 +53,7 @@ const AppLayout = (props) => {
           style={{
             margin: "24px 16px",
             padding: 24,
-            height: "100vh",
+            minHeight: "100vh",
           }}
         >
           {props.children}

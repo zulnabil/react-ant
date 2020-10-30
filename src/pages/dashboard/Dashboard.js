@@ -1,4 +1,4 @@
-import { Row, Col, Card, Typography, Button, Form, Input } from "antd"
+import { Row, Col, Card, Typography, Button, Form, Input, Select } from "antd"
 
 import classes from "./Dashboard.module.css"
 
@@ -58,22 +58,40 @@ function Dashboard() {
                 >
                   <Input.Group compact>
                     <Form.Item
-                      name={["country", "postal-code"]}
+                      name={"from-country"}
                       rules={[
                         { required: true, message: "Country is required" },
                       ]}
                       style={{ width: "70%" }}
                     >
-                      <Input placeholder="Country" />
+                      <Select
+                        showSearch
+                        style={{ width: "100%" }}
+                        placeholder="Select country"
+                        optionFilterProp="children"
+                        filterOption={(input, option) =>
+                          option.children
+                            .toLowerCase()
+                            .indexOf(input.toLowerCase()) >= 0
+                        }
+                      >
+                        <Select.Option value="indonesia">
+                          Indonesia
+                        </Select.Option>
+                        <Select.Option value="singapore">
+                          Singapore
+                        </Select.Option>
+                        <Select.Option value="malaysia">Malaysia</Select.Option>
+                      </Select>
                     </Form.Item>
                     <Form.Item
-                      name={["country", "postal-code"]}
+                      name={"from-postal-code"}
                       rules={[
                         { required: true, message: "Postal code is required" },
                       ]}
                       style={{ width: "30%" }}
                     >
-                      <Input placeholder="Postal code" />
+                      <Input type="number" placeholder="Postal code" />
                     </Form.Item>
                   </Input.Group>
                 </Form.Item>
@@ -86,22 +104,40 @@ function Dashboard() {
                 >
                   <Input.Group compact>
                     <Form.Item
-                      name={["country", "postal-code"]}
+                      name={"to-country"}
                       rules={[
                         { required: true, message: "Country is required" },
                       ]}
                       style={{ width: "70%" }}
                     >
-                      <Input placeholder="Country" />
+                      <Select
+                        showSearch
+                        style={{ width: "100%" }}
+                        placeholder="Select country"
+                        optionFilterProp="children"
+                        filterOption={(input, option) =>
+                          option.children
+                            .toLowerCase()
+                            .indexOf(input.toLowerCase()) >= 0
+                        }
+                      >
+                        <Select.Option value="indonesia">
+                          Indonesia
+                        </Select.Option>
+                        <Select.Option value="singapore">
+                          Singapore
+                        </Select.Option>
+                        <Select.Option value="malaysia">Malaysia</Select.Option>
+                      </Select>
                     </Form.Item>
                     <Form.Item
-                      name={["country", "postal-code"]}
+                      name={"to-postal-code"}
                       rules={[
                         { required: true, message: "Postal code is required" },
                       ]}
                       style={{ width: "30%" }}
                     >
-                      <Input placeholder="Postal code" />
+                      <Input type="number" placeholder="Postal code" />
                     </Form.Item>
                   </Input.Group>
                 </Form.Item>
@@ -112,7 +148,7 @@ function Dashboard() {
                   tooltip="What is the weight of the package in kilogram"
                   style={{ marginBottom: 18 }}
                 >
-                  <Input placeholder="Weight (in kg)" />
+                  <Input type="number" placeholder="Weight (in kg)" />
                 </Form.Item>
 
                 <Row justify="center">
