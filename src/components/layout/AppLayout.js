@@ -30,9 +30,11 @@ const AppLayout = (props) => {
       >
         <div className={classes.logo} />
         <Menu mode="inline" defaultSelectedKeys={[props.location.pathname]}>
-          {menus.map((menu) => (
+          {menus.map((menu, index) => (
             <Menu.Item key={menu.path} icon={menu.icon}>
-              <Link to={menu.path}>{menu.name}</Link>
+              <Link id={`link-${index}`} to={menu.path}>
+                {menu.name}
+              </Link>
             </Menu.Item>
           ))}
         </Menu>
