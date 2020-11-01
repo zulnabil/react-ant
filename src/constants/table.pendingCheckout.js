@@ -1,11 +1,19 @@
 import { Button } from "antd"
 import { EditOutlined } from "@ant-design/icons"
 
+const icon = {
+  lalamove: "/img/lalamove_logo.svg",
+  gogovan: "/img/gogovan_logo.svg",
+  grab: "/img/grab_logo.svg",
+}
+
 export const columns = [
   {
     title: "Courier",
     dataIndex: "courier",
-    render: (text) => <a>{text}</a>,
+    key: "courier",
+    align: "center",
+    render: (courier) => <img src={courier} alt={courier} />,
   },
   {
     title: "Description",
@@ -14,10 +22,26 @@ export const columns = [
   {
     title: "From",
     dataIndex: "from",
+    key: "from",
+    render: (from) => (
+      <span>
+        {from.name}
+        <br />
+        {from.address}
+      </span>
+    ),
   },
   {
     title: "To",
     dataIndex: "to",
+    key: "to",
+    render: (to) => (
+      <span>
+        {to.name}
+        <br />
+        {to.address}
+      </span>
+    ),
   },
   {
     title: "Rate",
@@ -32,55 +56,91 @@ export const columns = [
 export const data = [
   {
     key: "1",
-    courier: "Courier 1",
+    courier: icon.lalamove,
     description: "Sameday Delivery",
-    from: "Joseph, 100 Bukit Timah Road 01-23...",
-    to: "Jane Shepard, 1 Fuilerton rd #02-02",
+    from: {
+      name: "Joseph",
+      address: "100 Bukit Timah Road 01-23...",
+    },
+    to: {
+      name: "Kam",
+      address: "1 Fullerton Rd #02-02...",
+    },
     rate: "x 3",
     action: <Button icon={<EditOutlined />} />,
   },
   {
     key: "2",
-    courier: "Courier 2",
+    courier: icon.gogovan,
     description: "Sameday Delivery",
-    from: "Joseph, 100 Bukit Timah Road 01-23...",
-    to: "Jane Shepard, 1 Fuilerton rd #02-02",
+    from: {
+      name: "Wuhan Yan",
+      address: "514 Chai Chee Lane",
+    },
+    to: {
+      name: "Jian Tao",
+      address: "150 Neil Road",
+    },
     rate: "x 3",
     action: <Button icon={<EditOutlined />} />,
   },
   {
     key: "3",
-    courier: "Courier 3",
+    courier: icon.grab,
     description: "Sameday Delivery",
-    from: "Joseph, 100 Bukit Timah Road 01-23...",
-    to: "Jane Shepard, 1 Fuilerton rd #02-02",
+    from: {
+      name: "Joseph",
+      address: "100 Bukit Timah Road 01-23...",
+    },
+    to: {
+      name: "Kam",
+      address: "1 Fullerton Rd #02-02...",
+    },
     rate: "x 3",
     action: <Button icon={<EditOutlined />} />,
   },
   {
     key: "4",
-    courier: "Courier 4",
+    courier: icon.gogovan,
     description: "Sameday Delivery",
-    from: "Joseph, 100 Bukit Timah Road 01-23...",
-    to: "Jane Shepard, 1 Fuilerton rd #02-02",
+    from: {
+      name: "Wuhan Yan",
+      address: "514 Chai Chee Lane",
+    },
+    to: {
+      name: "Jian Tao",
+      address: "150 Neil Road",
+    },
     rate: "x 3",
     action: <Button icon={<EditOutlined />} />,
   },
   {
     key: "5",
-    courier: "Courier 5",
+    courier: icon.lalamove,
     description: "Sameday Delivery",
-    from: "Joseph, 100 Bukit Timah Road 01-23...",
-    to: "Jane Shepard, 1 Fuilerton rd #02-02",
+    from: {
+      name: "Joseph",
+      address: "100 Bukit Timah Road 01-23...",
+    },
+    to: {
+      name: "Jian Tao",
+      address: "150 Neil Road",
+    },
     rate: "x 3",
     action: <Button icon={<EditOutlined />} />,
   },
   {
     key: "6",
-    courier: "Courier 6",
+    courier: icon.grab,
     description: "Sameday Delivery",
-    from: "Joseph, 100 Bukit Timah Road 01-23...",
-    to: "Jane Shepard, 1 Fuilerton rd #02-02",
+    from: {
+      name: "Wuhan Yan",
+      address: "514 Chai Chee Lane",
+    },
+    to: {
+      name: "Kam",
+      address: "1 Fullerton Rd #02-02...",
+    },
     rate: "x 3",
     action: <Button icon={<EditOutlined />} />,
   },
