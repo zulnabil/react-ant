@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { Link, useLocation } from "react-router-dom"
 import { Layout, Menu } from "antd"
 import { MenuOutlined } from "@ant-design/icons"
 
@@ -9,6 +9,7 @@ import { menus } from "constants/sider"
 const { Header, Sider, Content } = Layout
 
 const AppLayout = (props) => {
+  const location = useLocation()
   const [collapsed, setCollapsed] = useState(true)
 
   const toggle = () => {
@@ -16,7 +17,7 @@ const AppLayout = (props) => {
   }
 
   const getCurrentPageName = () => {
-    return menus.find((menu) => menu.path === props.location.pathname).name
+    return menus.find((menu) => menu.path === location.pathname).name
   }
 
   return (
@@ -29,7 +30,7 @@ const AppLayout = (props) => {
         collapsed={collapsed}
       >
         <div className={classes.logo} />
-        <Menu mode="inline" defaultSelectedKeys={[props.location.pathname]}>
+        <Menu mode="inline" defaultSelectedKeys={[location.pathname]}>
           {menus.map((menu, index) => (
             <Menu.Item key={menu.path} icon={menu.icon}>
               <Link id={`link-${index}`} to={menu.path}>

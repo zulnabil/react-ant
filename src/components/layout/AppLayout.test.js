@@ -1,12 +1,13 @@
 import { render, unmountComponentAtNode } from "react-dom"
 import { act } from "react-dom/test-utils"
-import { MemoryRouter } from "react-router-dom"
+import { MemoryRouter, useLocation } from "react-router-dom"
 
 import AppLayout from "./AppLayout"
 
 it("navigates home when you click the logo", (async) => {
   // in a real test a renderer like "@testing-library/react"
   // would take care of setting up the DOM elements
+  const location = useLocation()
   const root = document.createElement("div")
   document.body.appendChild(root)
 
@@ -27,5 +28,5 @@ it("navigates home when you click the logo", (async) => {
   })
 
   // Check correct page content showed up
-  expect(document.body.textContent).toBe("Create shipment")
+  expect(location.pathname).toBe("/create-shipment")
 })
