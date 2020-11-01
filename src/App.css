@@ -1,5 +1,9 @@
 @import '~antd/dist/antd.css';
 
+.ant-table {
+  box-shadow: 0 4px 16px #e6e6e6;
+}
+
 :root {
   --blue: #1890ff;
   --lightblue: #e6f7ff;
@@ -21,4 +25,8 @@
 
 .typo-center {
   text-align: center;
+}
+
+.margin-auto {
+  margin: auto
 }

@@ -19,6 +19,7 @@ export const columns = [
     title: "Courier",
     dataIndex: "courier",
     key: "courier",
+    align: "center",
     render: (courier) => <img src={courier} alt={courier} />,
   },
   {
@@ -106,7 +107,7 @@ export const data = [
     status: "On the way",
   },
   {
-    courier: icon.lalamove,
+    courier: icon.grab,
     description: "Same day delivery",
     from: {
       name: "Wuhan Yan",
@@ -145,7 +146,7 @@ export const data = [
     status: "Pending pickup",
   },
   {
-    courier: icon.gogovan,
+    courier: icon.grab,
     description: "Same day delivery",
     from: {
       name: "Joseph",
@@ -184,7 +185,7 @@ export const data = [
     status: "Delivered",
   },
   {
-    courier: icon.lalamove,
+    courier: icon.grab,
     description: "Same day delivery",
     from: {
       name: "Wuhan Yan",
@@ -223,7 +224,7 @@ export const data = [
     status: "Rejected",
   },
   {
-    courier: icon.gogovan,
+    courier: icon.grab,
     description: "Same day delivery",
     from: {
       name: "Joseph",

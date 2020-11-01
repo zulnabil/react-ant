@@ -7,7 +7,11 @@ function Shipments() {
     <>
       <Row justify="center">
         <Col xl={18} lg={24} md={24} xs={24}>
-          <Table columns={columns} dataSource={data} />
+          <Table
+            columns={columns}
+            dataSource={data}
+            pagination={{ position: ["bottomCenter"] }}
+          />
         </Col>
       </Row>
     </>
