@@ -1,5 +1,17 @@
+import { Table, Row, Col } from "antd"
+
+import { columns, data } from "constants/table.shipments"
+
 function Shipments() {
-  return <h3>Shipments</h3>
+  return (
+    <>
+      <Row justify="center">
+        <Col xl={18} lg={24} md={24} xs={24}>
+          <Table columns={columns} dataSource={data} />
+        </Col>
+      </Row>
+    </>
+  )
 }
 
 export default Shipments
