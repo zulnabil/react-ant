@@ -45,27 +45,30 @@ function PendingCheckout() {
           />
         </div>
       </Row>
+            
+      <Row gutter={[8, 8]} justify="center">
 
-      <Row>
-        <Col span={2} offset={6}>
-          <Button type="primary" style={{ marginTop: 18 }}>
-            Add Shipment
-          </Button>
-        </Col>
-        <Col span={2}>
-          <Button danger style={{ marginTop: 18 }}>
-            Remove Shipment
-          </Button>
-        </Col>
-        <Col span={3} offset={6}>
-          <Button
-            type="primary"
-            style={{ marginTop: 10, backgroundColor: "green" }}
-          >
-            Pay For Service
-          </Button>
-        </Col>
-      </Row>
+          <Col xl={3} lg={8} md={6} xs={6} offset={5}>
+            <Button type="primary" style={{ marginTop: 18 }}>
+              Add Shipment
+            </Button>
+          </Col>
+          <Col xl={8} lg={8} md={6} xs={6}>
+            <Button danger style={{ marginTop: 18 }}>
+              Remove Shipment
+            </Button>
+          </Col>
+          <Col xl={8} lg={8} md={6} xs={6}>
+            <Button
+              type="primary"
+              style={{ marginTop: 18, backgroundColor: "green" }}
+            >
+              Pay For Service
+            </Button>
+          </Col>
+        </Row>
+
+      
     </section>
   )
 }
